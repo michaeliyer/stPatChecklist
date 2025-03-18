@@ -1,0 +1,304 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1rem;
+    background-color: #7295ba;
+    color: #e6eafe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+h1 {
+    font-family: "Lilita One", sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Main container */
+#mainContainer {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Controls (Add Section, Export/Import) */
+#controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.newFileSection, .importExportSection {
+    border: 2px solid #7a93ae;
+    padding: 0.75rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #0b55a4;
+    width: 280px;
+}
+
+input[type="text"], input[type="file"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 90%;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+    font-size: 1rem;
+}
+
+button:hover {
+    background: #ffffff33;
+}
+
+.export-button, .import-button {
+    font-family: "Lilita One", sans-serif;
+    background: #007bff;
+    color: white;
+}
+
+.export-button:hover, .import-button:hover {
+    background: #0056b3;
+}
+
+/* Sections Grid */
+#sectionsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Section Styling */
+.section {
+    padding: 1rem;
+    background: #238cae;
+    border: 2px solid #7a93ae;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease;
+}
+
+.section-title {
+    font-family: "Lilita One", sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+/* Section buttons */
+.section button {
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    background: #3e4dff;
+    color: white;
+}
+
+.section-content {
+    margin-top: 0.5rem;
+}
+
+/* Task List */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #a1a5ad;
+    margin: 0.2rem 0;
+    padding: 0.3rem;
+    border-radius: 4px;
+}
+
+li label {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+li input[type="checkbox"] {
+    height: 1.5rem;
+    width: 1.5rem;
+    accent-color: black;
+    margin-right: 0.5rem;
+    transform: scale(1.3);
+}
+
+li button {
+    background: red;
+    color: white;
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+}
+
+/* Completed task */
+.completed {
+    /* text-decoration: none; */
+    /* font-family: "Silkscreen", sans-serif; */
+    font-family: "Matemasie", sans-serif;
+    opacity: 0.9;
+    background-color: black;
+    color: rgb(8, 80, 110);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: #f4f4f4;
+    margin: 10% auto;
+    padding: 1rem;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.modal-content select, 
+.modal-content input[type="color"], 
+.modal-content input[type="number"] {
+    width: 80%;
+    margin-bottom: 0.5rem;
+    padding: 0.4rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Apply and Cancel buttons */
+.modal-content button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #sectionsContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .newFileSection, .importExportSection {
+        width: 90%;
+    }
+}
+
+
+
+
+
+.section {
+    font-size: inherit;
+}
+.section * {
+    font-size: inherit !important;
+}
+
+
+
+.menu-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+.dropdown-menu button {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 0.4rem;
+    border-radius: 4px;
+}
+
+
+.task-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+.menu-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+.dropdown-menu button {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 0.4rem;
+    border-radius: 4px;
+}

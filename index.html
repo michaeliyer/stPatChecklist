@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stPatChecklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>✍🏼 March Checklist ✍🏼</h1>
+
+    <div id="mainContainer">
+        <div id="headerContainer">
+            <div id="controls">
+                <div class="newFileSection">
+                    <h2>✍🏼 Add A New Section ✍🏼</h2>
+                    <input type="text" id="newSection" placeholder="New Section Name">
+                    <button onclick="addSection()">➕ Add Section</button>
+                </div>
+                <div class="importExportSection">
+                    <button onclick="exportData()" class="export-button">📤 Export</button>
+                    <label for="importFile" class="import-button">📥 Import</label>
+                    <input type="file" id="importFile" accept=".json" onchange="importData(event)" style="display:none;">
+                </div>
+            </div>
+        </div>
+        <div id="sectionsContainer"></div>
+    </div>
+
+    <!-- Style Modal -->
+    <div id="styleModal" class="modal">
+        <div class="modal-content">
+            <h3>Customize Section</h3>
+            <label for="fontSelect">Font:</label>
+            <select id="fontSelect"></select>
+
+            <label for="fontSize">Font Size (px):</label>
+            <input type="number" id="fontSize" value="16" min="12" max="48">
+
+            <label for="textColor">Text Color:</label>
+            <input type="color" id="textColor">
+
+            <label for="bgColor">Background Color:</label>
+            <input type="color" id="bgColor">
+
+            <button onclick="applyStyle()">✅ Apply</button>
+            <button onclick="closeStyleModal()">❌ Cancel</button>
+        </div>
+    </div>
+
+    <script src="fonts.js"></script>
+    <script src="script2.js"></script>
+</body>
+</html>
